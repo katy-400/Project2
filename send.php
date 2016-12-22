@@ -1,4 +1,15 @@
 <?php
+  ini_set('display_errors', 'On');
+  error_reporting(E_ALL);
+  
+  //use code\core
+  //use code\core\autoloader
+  //use code\core\addressbook
+  //use code\core\mailer
+  //use code\core\sanitation
+  //use code\core\readCSV
+  ////use code\core\Curl
+
   echo "<pre>";
   include "code/bootstrap.php";
   $mailer = new Mailer();
@@ -56,8 +67,8 @@ echo $obj -> readCSV("Names.csv", true);
 
 //Curl
 echo "<hr></hr>";
-$ch = curl_init("http://www.google.com/");
-$fp = fopen("example_homepage.txt", "w");
+$ch = curl_init("https://www.google.com/#q=penguins&btnK=Google+Search");
+$fp = fopen("http://www.google.com/", "w");
 
 curl_setopt($ch, CURLOPT_FILE, $fp);
 curl_setopt($ch, CURLOPT_HEADER, 0);
